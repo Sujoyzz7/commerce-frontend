@@ -1,11 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Instagram, Twitter, Facebook, Youtube, Mail, MapPin, Phone } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/admin")) return null;
   return (
     <footer className="bg-[#0a0a0a] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -107,10 +110,13 @@ export function Footer() {
           <p className="text-xs text-white/30">
             © 2024 Atelier. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-xs text-white/30">
-            <Link href="#" className="hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
+            <div className="flex items-center gap-6 text-xs text-white/30">
+              <Link href="/admin" className="hover:text-white transition-colors">
+                Admin Panel
+              </Link>
+              <Link href="#" className="hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
             <Link href="#" className="hover:text-white transition-colors">
               Terms of Service
             </Link>
