@@ -1,1 +1,0 @@
-"use client"; export default function Customers() { return (<div><h2 className=\"text-3xl font-light tracking-tight uppercase tracking-[0.1em]\">Customers</h2><p className=\"text-white/40 mt-1\">View and manage your customer base.</p></div>); }"

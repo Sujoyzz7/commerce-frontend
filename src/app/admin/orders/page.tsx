@@ -1,1 +1,0 @@
-"use client"; export default function Orders() { return (<div><h2 className=\"text-3xl font-light tracking-tight uppercase tracking-[0.1em]\">Orders</h2><p className=\"text-white/40 mt-1\">Track and manage customer orders.</p></div>); }"
