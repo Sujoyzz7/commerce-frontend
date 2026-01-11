@@ -13,7 +13,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { usePathname } from "next/navigation";
 import {
   Search,
   ShoppingBag,
@@ -28,15 +27,9 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
-  const store = useStore();
+  const { cart, cartTotal, cartCount, updateQuantity, removeFromCart, wishlist } = useStore();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
-
-  if (pathname?.startsWith("/admin")) return null;
-  if (!store) return null;
-
-  const { cart, cartTotal, cartCount, updateQuantity, removeFromCart, wishlist } = store;
 
   const navLinks = [
     { name: "New Arrivals", href: "/products?filter=new" },
